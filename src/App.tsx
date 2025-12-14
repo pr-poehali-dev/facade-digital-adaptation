@@ -6,6 +6,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
 import ObjectDetail from "./pages/ObjectDetail";
 import RoleDashboard from "./pages/RoleDashboard";
+import Mobile from "./pages/Mobile";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -19,6 +20,7 @@ const App = () => (
         <Route path="/" element={<Index />} />
         <Route path="/object/:id" element={<ObjectDetail />} />
         <Route path="/roles" element={<RoleDashboard />} />
+        <Route path="/mobile" element={<Mobile />} />
         {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
         <Route path="*" element={<NotFound />} />
       </Routes>

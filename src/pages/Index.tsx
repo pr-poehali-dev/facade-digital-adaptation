@@ -196,6 +196,10 @@ const Index = () => {
               </div>
             </div>
             <div className="flex items-center gap-4">
+              <Button variant="outline" size="sm" onClick={() => navigate('/mobile')}>
+                <Icon name="Smartphone" size={18} className="mr-2" />
+                Мобильная
+              </Button>
               <Button variant="outline" size="sm" onClick={() => navigate('/roles')}>
                 <Icon name="Users" size={18} className="mr-2" />
                 Мои задачи
