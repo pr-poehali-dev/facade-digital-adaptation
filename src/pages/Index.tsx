@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Progress } from '@/components/ui/progress';
@@ -135,6 +136,7 @@ const mockActivityLog: ActivityLog[] = [
 ];
 
 const Index = () => {
+  const navigate = useNavigate();
   const [selectedProject, setSelectedProject] = useState<string | null>(null);
 
   const activeProjects = mockProjects.filter(p => p.status === 'active').length;
@@ -194,6 +196,10 @@ const Index = () => {
               </div>
             </div>
             <div className="flex items-center gap-4">
+              <Button variant="outline" size="sm" onClick={() => navigate('/roles')}>
+                <Icon name="Users" size={18} className="mr-2" />
+                Мои задачи
+              </Button>
               <Button variant="outline" size="sm">
                 <Icon name="Bell" size={18} className="mr-2" />
                 Уведомления
@@ -298,7 +304,7 @@ const Index = () => {
                 <Card 
                   key={project.id} 
                   className="hover:shadow-lg transition-all cursor-pointer animate-scale-in"
-                  onClick={() => setSelectedProject(project.id)}
+                  onClick={() => navigate(`/object/${project.id}`)}
                 >
                   <CardHeader>
                     <div className="flex items-start justify-between">
